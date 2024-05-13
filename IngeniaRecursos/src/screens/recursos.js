@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, ActivityIndicator, Modal, Linking } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, ActivityIndicator, Modal, Linking, TextInput } from 'react-native';
 
 const RecursosScreen = () => {
   const [recursos, setRecursos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedRecurso, setSelectedRecurso] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     fetchRecursos();
@@ -45,6 +46,10 @@ const RecursosScreen = () => {
     setModalVisible(false);
   };
 
+  const filteredRecursos = recursos.filter((recurso) =>
+    recurso.titulo.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   if (isLoading) {
     return (
       <View style={styles.loadingContainer}>
@@ -55,10 +60,16 @@ const RecursosScreen = () => {
 
   return (
     <View style={styles.container}>
+      <TextInput
+        style={styles.searchInput}
+        placeholder="Buscar recursos..."
+        value={searchTerm}
+        onChangeText={(text) => setSearchTerm(text)}
+      />
       <Text style={styles.title}>Recursos Disponibles</Text>
       <Text style={styles.subtitle}>En este apartado puedes encontrar diferentes libros, cursos y artículos relacionados a la Ingeniería en sistemas.</Text>
       <FlatList
-        data={recursos}
+        data={filteredRecursos}
         renderItem={renderRecursosItem}
         keyExtractor={(item) => item.id.toString()}
         style={styles.list}
@@ -105,6 +116,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 20,
     textAlign: 'center'
+  },
+  searchInput: {
+    backgroundColor: '#fff',
+    padding: 10,
+    borderRadius: 8,
+    marginBottom: 10,
   },
   list: {
     flex: 1,
@@ -170,4 +187,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RecursosScreen;
+export default RecursosScreen;
