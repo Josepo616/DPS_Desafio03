@@ -14,12 +14,18 @@ export default function App() {
         <Stack.Screen 
           name="Welcome" 
           component={WelcomeScreen} 
-          options={{ title: 'Bienvenida' }}
+          options={{ 
+            title: 'Bienvenida',
+            headerStyle: { backgroundColor: '#107ACC' }, 
+          }}
         />
         <Stack.Screen 
           name="recursos" 
           component={Recursos} 
-          options={{ title: 'Recursos' }}
+          options={{ 
+            title: 'Recursos',
+            headerStyle: { backgroundColor: '#107ACC' }, 
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
