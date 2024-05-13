@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const WelcomeScreen = ({ navigation }) => {
   const goToRecursosScreen = () => {
-    navigation.navigate('recursos'); // Nombre de la pantalla de recursos en tu navegación
+    navigation.navigate('recursos'); 
   };
 
   return (
@@ -22,14 +22,15 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff', // Fondo blanco
-    paddingHorizontal: 20,
+    backgroundColor: '#0CB7F2', 
+    paddingHorizontal: 30,
   },
   title: {
-    fontSize: 24,
+    fontSize: 25,
     fontWeight: 'bold',
-    color: '#000', // Color del texto
-    marginBottom: 10,
+    color: '#000', 
+    marginBottom: 30,
+    textAlign: 'center', 
   },
   subtitle: {
     fontSize: 18,
@@ -38,14 +39,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-    backgroundColor: '#2ecc71', // Color de fondo del botón
+    backgroundColor: '#DEF7FF', 
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
+    borderRadius: 8,
   },
   buttonText: {
     fontSize: 16,
-    color: '#fff',
+    color: '#000',
     fontWeight: 'bold',
   },
 });
