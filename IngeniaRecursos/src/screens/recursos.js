@@ -56,6 +56,7 @@ const RecursosScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Recursos Disponibles</Text>
+      <Text style={styles.subtitle}>En este apartado puedes encontrar diferentes libros, cursos y artículos relacionados a la Ingeniería en sistemas.</Text>
       <FlatList
         data={recursos}
         renderItem={renderRecursosItem}
@@ -90,31 +91,39 @@ const RecursosScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    paddingHorizontal: 20,
+    backgroundColor: '#0CB7F2',
+    paddingHorizontal: 30,
     paddingTop: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
+    marginBottom: 10,
+    textAlign: 'center'
+  },
+  subtitle: {
+    fontSize: 16,
     marginBottom: 20,
+    textAlign: 'center'
   },
   list: {
     flex: 1,
   },
   itemContainer: {
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#DEF7FF',
     padding: 20,
     marginBottom: 10,
-    borderRadius: 5,
+    borderRadius: 8,
   },
   itemTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 5,
+    textAlign: 'center'
   },
   itemDescription: {
     fontSize: 16,
+    textAlign: 'center'
   },
   loadingContainer: {
     flex: 1,
@@ -126,9 +135,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
+     paddingHorizontal: 15,
   },
   modalContent: {
-    backgroundColor: '#fff',
+    backgroundColor: '#DEF7FF',
     padding: 20,
     borderRadius: 10,
     alignItems: 'center',
@@ -148,7 +158,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   modalButton: {
-    backgroundColor: '#2ecc71',
+    backgroundColor: '#0CB7F2',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
